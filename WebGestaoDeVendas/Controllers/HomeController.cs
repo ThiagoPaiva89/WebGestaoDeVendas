@@ -17,7 +17,7 @@ namespace WebGestaoDeVendas.Controllers
 
         public IActionResult About()
         {
-            ViewData["Message"] = "Your application description page.";
+            ViewData["Message"] = "Web Gestão de Vendas.";
 
             return View();
         }
