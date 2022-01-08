@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
-using WebGestaoDeVendas.Models;
+using WebGestaoDeVendas.Models.ViewModels;
 
 namespace WebGestaoDeVendas.Controllers
 {
@@ -18,6 +18,7 @@ namespace WebGestaoDeVendas.Controllers
         public IActionResult About()
         {
             ViewData["Message"] = "Web Gestão de Vendas.";
+            
 
             return View();
         }
