@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WebGestaoDeVendas.Data;
 
 namespace WebGestaoDeVendas.Migrations
 {
     [DbContext(typeof(WebGestaoDeVendasContext))]
-    partial class WebGestaoDeVendasContextModelSnapshot : ModelSnapshot
+    [Migration("20220111134553_ChaveExtrangeiraDepartamento")]
+    partial class ChaveExtrangeiraDepartamento
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
