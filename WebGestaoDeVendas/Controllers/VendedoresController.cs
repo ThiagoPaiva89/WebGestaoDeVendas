@@ -5,6 +5,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using WebGestaoDeVendas.Services;
 using WebGestaoDeVendas.Models;
+using WebGestaoDeVendas.Models.ViewModels;
 
 namespace WebGestaoDeVendas.Controllers
 {
@@ -12,10 +13,12 @@ namespace WebGestaoDeVendas.Controllers
     {
 
         private readonly VendedorService _vendedorService;
+        private readonly DepartamentoService _departamentoService;
 
-        public VendedoresController(VendedorService vendedorService)
+        public VendedoresController(VendedorService vendedorService, DepartamentoService departamentoService)
         {
             _vendedorService = vendedorService;
+            _departamentoService = departamentoService;
         }
 
         public IActionResult Index()
@@ -28,7 +31,9 @@ namespace WebGestaoDeVendas.Controllers
 
         public IActionResult Create()
         {
-            return View();
+            var departamentos = _departamentoService.FindAll();
+            var viewModel = new VendedorFormViewModel { Departamentos = departamentos };
+            return View(viewModel);
         }
 
         [HttpPost]
